@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="center">
+    <div id="map" style="height:600px; width:600px;"></div> 
+    <script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPHIana7ip3J58fGmXrJIaz0wGQBqwWvU&callback=initMAP">
+	</script>
+    <script>  
+        var map;  
+        function initMAP() {  
+            var SetmapOptions = {  
+                zoom: 15,  
+                center: new google.maps.LatLng(37.841530399999996,-122.10984239999999)  
+            };  
+            map = new google.maps.Map(document.getElementById('map'),  
+      SetmapOptions);  
+        }  
+  
+    </script>  
+    <div>GET API KEY <a href="https://developers.google.com/maps/documentation/javascript/get-api-key">HERE</a>:</div>
+</div>
+
+<div>
+    <h1>table</h1>
+
+    <p>
+        @Model.sampledata
+    </p>
+</div>
+
